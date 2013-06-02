@@ -171,8 +171,10 @@ class jigoshop_product extends Jigoshop_Base {
 			'post_status'  => 'any',
 			'numberposts'  => -1
 		));
+		
+		$this->children = apply_filters( 'jigoshop_get_product_children', $children, $this );
 
-		return apply_filters('jigoshop_get_children',$children,$this);
+		return $this->children;
 	}
 
 	/**
